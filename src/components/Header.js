@@ -4,7 +4,7 @@ import Link from "./Link";
 function Header() {
   return (
     <div className="ui center aligned segment">
-      <div class="ui horizontal bulleted link list ">
+      <div className="ui horizontal bulleted link list ">
         <Link className="item" href="/">
           Accordion
         </Link>
