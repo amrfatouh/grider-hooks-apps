@@ -1,6 +1,8 @@
 import React from "react";
 import Accordion from "./components/Accordion";
 import Colors from "./components/Colors";
+import Header from "./components/Header";
+import Route from "./components/Route";
 import Search from "./components/Search";
 import Translation from "./components/Translation";
 
@@ -25,13 +27,19 @@ const items = [
 function App() {
   return (
     <div className="ui container">
-      <Accordion items={items} />
-      <hr />
-      <Search />
-      <hr />
-      <Colors />
-      <hr />
-      <Translation />
+      <Header />
+      <Route path="/">
+        <Accordion items={items} />
+      </Route>
+      <Route path="/search">
+        <Search />
+      </Route>
+      <Route path="/colors">
+        <Colors />
+      </Route>
+      <Route path="/translation">
+        <Translation />
+      </Route>
     </div>
   );
 }

@@ -38,3 +38,46 @@ Search
   make results state variable that store data received from api
   on receiving the request, update results state variable
   show the results array below the text input
+
+Colors
+  make options array to be passed to Dropdown (array of {label: xxx, value: xxx})
+  return the Dropdown an pass the options array to it
+  make state variable "selected" and pass it and it set function to Dropdown
+  also pass a label that would appear on the Dropdown
+
+Dropdown
+  it receives the previous parameters
+  it render each option in a dropdown entry
+  when an entry is clicked on, it updates the "selected" state variable
+  when an entry is clicked on, the dropdown collapses
+  when clicking on any other element, it also collapses
+    add event listener when the element first renders to the body for clicks
+    if the clicked element is inside the Dropdown, do nothing (use ref for that)
+    else close the dropdown
+    make a clear function for that
+
+Translation
+  same as Colors, pass label, options array, selectedLanguage, updateSelectedLanguage
+  make an input and control it via state varialbe "term"
+  also make a state variable "sentTerm" to store the term already sent
+  on change of "term", set a timeout to update "sentTerm"
+  make a clean up function for that
+  when sentTerm or selectedLanguage are changed, send a request to translation api
+  show the coming result 
+
+Routing
+  Link
+    the component receives an href, children
+    the component returns an anchor tag of the same href as the passed one
+    received children are also passed to anchor tag
+    on clicking on the anchor tag
+      prevent default behaviour
+      change the pathname
+      dispatch a popstate event
+  Route
+    the component receives a path and children
+    if the path equals the current pathname, it views the children
+    it listens for a popstate event
+    when an event is dispatched, it re-renders (just update a dummy state variable)
+  Header
+    consists of Links that point to corresponding path for each component
