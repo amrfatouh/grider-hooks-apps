@@ -34,13 +34,13 @@ function Search() {
 
   const renderedResults = results.map((result) => {
     return (
-      <div className="ui segment">
-        <div class="item">
-          <div class="content">
+      <div className="ui segment" key={result.pageid}>
+        <div className="item">
+          <div className="content">
             <a href={`https://en.wikipedia.org/?curid=${result.pageid}`}>
-              <h3 class="header">{result.title}</h3>
+              <h3 className="header">{result.title}</h3>
             </a>
-            <div class="description">
+            <div className="description">
               <p dangerouslySetInnerHTML={{ __html: result.snippet }}></p>
             </div>
           </div>

@@ -6,7 +6,7 @@ function Dropdown({ label, options, selected, setSelected }) {
 
   useEffect(() => {
     const closeDropdown = (e) => {
-      if (ref.current.contains(e.target)) return;
+      if (ref.current?.contains(e.target)) return;
       setOpen(false);
     };
     document.body.addEventListener("click", closeDropdown);
@@ -19,7 +19,10 @@ function Dropdown({ label, options, selected, setSelected }) {
   const renderedColors = options.map((option) => {
     if (option.value === selected.value) return null;
     return (
-      <div className="item" onClick={() => setSelected(option)}>
+      <div
+        key={option.value}
+        className="item"
+        onClick={() => setSelected(option)}>
         {option.label}
       </div>
     );

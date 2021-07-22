@@ -13,7 +13,7 @@ export default function Accordion({ items }) {
     return (
       <div className="ui segment" key={item.title}>
         <div className={`title ${active}`} onClick={() => onTitleClick(item)}>
-          <i class="dropdown icon"></i>
+          <i className="dropdown icon"></i>
           {item.title}
         </div>
         <div className={`content ${active}`}>
@@ -23,7 +23,7 @@ export default function Accordion({ items }) {
     );
   });
 
-  return <div class="ui accordion segment">{accordionEntries}</div>;
+  return <div className="ui accordion segment">{accordionEntries}</div>;
 }
 
 // compares between an item & active item

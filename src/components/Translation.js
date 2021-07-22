@@ -67,8 +67,8 @@ function Translation() {
         />
       </div>
       <div className="ui segment">
-        <div class="ui labeled input">
-          <div class="ui label">Word to be Translated:</div>
+        <div className="ui labeled input">
+          <div className="ui label">Word to be Translated:</div>
           <input
             type="text"
             value={term}
