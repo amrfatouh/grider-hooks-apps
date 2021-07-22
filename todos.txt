@@ -1,0 +1,40 @@
+create Accordion
+  make an accordion that contains 3 question & answers
+create Search
+  make an input which receives a search term and returns with search results from wikipedia api and shows the results
+create Dropdown
+  make a dropdown which receives some options to show in the drop down
+  it lets the parent know which option is selected
+  when choosing an option, the dropdown collapses
+  when clicking outside the dropdown, it also collapses
+create Colors
+  uses Dropdown to choose from a group of color
+  it colors a text with the selected color
+create Translation
+  uses Dropdown to choose from a group of languages
+  has a text input to take a text
+  it sends the text to google translation api and shows the result
+
+
+Accordion
+  the Accordion should receive an array of items to be shown {title: xxx, content: xxx}
+  it shows them with semantic-ui style
+  store in the state of Accordion the active item
+  when rendering the array, if the title of the item equals the title of active item, add active style class
+  determing if you'd add active class or not using determineActive() function
+    it takes an item and activeItem and determine the returned value accordingly
+    it returns either an empty string or "active"
+  on clicking in an entry, update the active entry
+  if the activeItem is the same as the clicked item, set activeItem to null
+
+Search
+  make text input
+  control it using state variable "term"
+  make another state variable called "sentTerm"
+  on changing the text input, update the "term"
+  on updating the "term", set timeout to update the "sentTerm"
+  return a cleaning up function from "term" useEffect that clears the timeout
+  on updating "sentTerm", send a request to wikipedia api
+  make results state variable that store data received from api
+  on receiving the request, update results state variable
+  show the results array below the text input
