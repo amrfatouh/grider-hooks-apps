@@ -56,6 +56,15 @@ function Translation() {
     sendRequest();
   }, [selectedLanguage, sentTerm]);
 
+  // the google translate key only works on localhost:3000
+  if (window.location.host !== "localhost:3000") {
+    return (
+      <div className="ui header large">
+        Sorry, this component only works on <u>localhost:3000</u>
+      </div>
+    );
+  }
+
   return (
     <div>
       <div className="ui segment">
