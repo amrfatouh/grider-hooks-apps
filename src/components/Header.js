@@ -5,16 +5,16 @@ function Header() {
   return (
     <div className="ui center aligned segment">
       <div className="ui horizontal bulleted link list ">
-        <Link className="item" href="/">
+        <Link className="item" href="/#/">
           Accordion
         </Link>
-        <Link className="item" href="/search">
+        <Link className="item" href="/#/search">
           Search
         </Link>
-        <Link className="item" href="/colors">
+        <Link className="item" href="/#/colors">
           Colors
         </Link>
-        <Link className="item" href="/translation">
+        <Link className="item" href="/#/translation">
           Translation
         </Link>
       </div>

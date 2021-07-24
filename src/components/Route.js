@@ -13,7 +13,7 @@ function Route({ path, children }) {
       window.removeEventListener("popstate", rerenderRoute);
     };
   }, []);
-  return path === window.location.pathname ? children : null;
+  return "#" + path === window.location.hash ? children : null;
 }
 
 export default Route;
