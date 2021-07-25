@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Accordion from "./components/Accordion";
 import Colors from "./components/Colors";
 import Header from "./components/Header";
@@ -25,6 +25,10 @@ const items = [
 ];
 
 function App() {
+  useEffect(() => {
+    window.location.hash = "#/";
+  }, []);
+
   return (
     <div className="ui container">
       <Header />
